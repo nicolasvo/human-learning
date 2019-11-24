@@ -1,0 +1,21 @@
+- name: "Create a file"
+  copy:
+    content: "bae"
+    dest: /root/boi.txt
+    force: no
+    group: sys
+    #owner: connie
+    #mode: 0555
+- name: "Touch a file"
+  file:
+    path: /root/test.txt
+    state: touch
+    force: yes
+- name: "Create a directory"
+  file:
+    path: /root/test
+    state: directory
+    #- name: "Remove a directory"
+    #  file:
+    #    path: /root/test
+    #    state: absent

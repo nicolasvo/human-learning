@@ -1,0 +1,14 @@
+version: '3'
+services:
+  machine_1:
+    image: "machine_ssh"
+    ports: 
+      - "1:22"
+  machine_2:
+    image: "machine_ssh"
+    ports: 
+      - "2:22"
+  machine_3:
+    image: "machine_ssh"
+    ports: 
+      - "3:22"
