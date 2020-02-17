@@ -89,7 +89,33 @@
     },
     {
       "type": "powershell",
-      "script": "./base/scripts/provision-base.ps1"
+      "inline": [
+        "Install-WindowsFeature NET-Framework-45-Features"
+      ]
+    },
+    {
+      "type": "powershell",
+      "inline": [
+        "Install-WindowsFeature NET-Framework-45-Core"
+      ]
+    },
+    {
+      "type": "powershell",
+      "inline": [
+        "Install-WindowsFeature NET-Framework-45-ASPNET"
+      ]
+    },
+    {
+      "type": "powershell",
+      "inline": [
+        "Install-WindowsFeature NET-Framework-Core"
+      ]
+    },
+    {
+      "type": "powershell",
+      "inline": [
+        "Install-WindowsFeature NET-Framework-Features"
+      ]
     },
     {
       "type": "powershell",
