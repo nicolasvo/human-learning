@@ -90,22 +90,8 @@
       ]
     },
     {
-      "type": "powershell",
-      "inline": [
-        "Install-WindowsFeature NET-Framework-45-Features"
-      ]
-    },
-    {
-      "type": "powershell",
-      "inline": [
-        "Install-WindowsFeature NET-Framework-45-Core"
-      ]
-    },
-    {
-      "type": "powershell",
-      "inline": [
-        "Install-WindowsFeature NET-Framework-45-ASPNET"
-      ]
+      "type": "breakpoint",
+      "note": "foo bar baz"
     },
     {
       "type": "powershell",
@@ -118,6 +104,10 @@
       "inline": [
         "Install-WindowsFeature NET-Framework-Features"
       ]
+    },
+    {
+      "type": "breakpoint",
+      "note": "foo bar baz"
     },
     {
       "type": "powershell",
