@@ -90,24 +90,14 @@
       ]
     },
     {
-      "type": "breakpoint",
-      "note": "foo bar baz"
+      "type": "breakpoint"
     },
     {
       "type": "powershell",
-      "inline": [
-        "Install-WindowsFeature NET-Framework-Core"
-      ]
+      "script": "./base/scripts/provision-base.ps1"
     },
     {
-      "type": "powershell",
-      "inline": [
-        "Install-WindowsFeature NET-Framework-Features"
-      ]
-    },
-    {
-      "type": "breakpoint",
-      "note": "foo bar baz"
+      "type": "breakpoint"
     },
     {
       "type": "powershell",
