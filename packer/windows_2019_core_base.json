@@ -3,7 +3,7 @@
     {
       "type": "hyperv-iso",
       "name": "hyperv",
-      "output_directory": "output-HyperV-{{user `build_name`}}",
+      "output_directory": "images/base/output-HyperV-{{user `build_name`}}",
       "boot_wait": "0s",
       "communicator": "winrm",
       "configuration_version": "9.0",
