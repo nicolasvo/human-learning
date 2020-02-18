@@ -134,7 +134,7 @@
     "iso_url": "https://software-download.microsoft.com/download/sg/17763.379.190312-0539.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso",
     "vmware_tools_iso_path": ".\\base\\vmware-tools\\iso\\vmware-tools.iso",
     "winrm_timeout": "6h",
-    "hyperv_switchname": "Default Switch",
+    "hyperv_switchname": "packer-hyperv-iso",
     "vhv_enable": "false",
     "computer_name": "TM5",
     "admin_password": null
