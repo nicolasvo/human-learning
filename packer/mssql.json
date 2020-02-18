@@ -84,7 +84,7 @@
         "base_name": "WinSrv2019DCCore-BASE",
         "winrm_timeout": "6h",
         "shutdown_timeout": "1h",
-        "hyperv_switchname": "Default Switch",
+        "hyperv_switchname": "ExternalSwitch",
         "memory": "2048",
         "cpus": "1",
         "headless": "false",
