@@ -4,8 +4,8 @@
             "type": "hyperv-vmcx",
             "name": "hyperv",
             "vm_name": "packer-{{user `build_name`}}",
-            "output_directory": "output-HyperV-{{user `build_name`}}",
-            "clone_from_vmcx_path": "output-HyperV-{{user `base_name`}}",
+            "output_directory": "images/mssql/output-HyperV-{{user `build_name`}}",
+            "clone_from_vmcx_path": "images/base/output-HyperV-{{user `base_name`}}",
             "generation": 2,
             "secondary_iso_images": [
                 "{{ user `mssql_iso_path`}}"
@@ -63,6 +63,9 @@
     ],
     "post-processors": [],
     "provisioners": [
+        {
+            "type": "breakpoint"
+        },
         {
             "elevated_user": "administrator",
             "elevated_password": "{{user `admin_password`}}",
