@@ -1,0 +1,71 @@
+{
+  "builders": [
+    {
+      "type": "hyperv-iso",
+      "name": "hyperv",
+      "output_directory": "./images/base/output-HyperV-{{user `build_name`}}",
+      "boot_wait": "0s",
+      "communicator": "winrm",
+      "configuration_version": "9.0",
+      "cpus": "{{user `cpus`}}",
+      "memory": "{{user `memory`}}",
+      "disk_size": "{{user `disk_size`}}",
+      "enable_secure_boot": true,
+      "floppy_files": [
+        "{{user `autounattend`}}",
+        "./base/floppy/setup-winrm.ps1",
+        "./base/floppy/disable-screensaver.ps1",
+        "./base/floppy/microsoft-updates.bat",
+        "./base/floppy/windows-updates.ps1"
+      ],
+      "guest_additions_mode": "disable",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "iso_checksum_type": "{{user `iso_checksum_type`}}",
+      "iso_url": "{{user `iso_url`}}",
+      "switch_name": "{{user `hyperv_switchname`}}",
+      "winrm_timeout": "{{user `winrm_timeout`}}",
+      "winrm_username": "administrator",
+      "winrm_password": "vagrant"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "powershell",
+      "script": "./base/scripts/provision-base.ps1"
+    },
+    {
+      "type": "powershell",
+      "script": "./base/scripts/cleanup-image.ps1"
+    },
+    {
+      "type": "powershell",
+      "inline": [
+        "Rename-Computer -NewName {{user `computer_name`}}",
+        "Get-LocalUser -Name \"Administrator\" | Set-LocalUser -Password $(ConvertTo-SecureString -String \"{{user `admin_password`}}\" -AsPlainText -Force)",
+        "Stop-Computer -Force"
+      ]
+    },
+    {
+      "type": "breakpoint",
+      "pause_before": "60s",
+      "disable": "true"
+    }
+  ],
+  "variables": {
+    "build_name": "WinSrv2019DCCore-BASE",
+    "autounattend": "./base/answers/2019-DC-CORE/Autounattend.xml",
+    "disk_size": "80000",
+    "disk_type_id": "1",
+    "memory": "2048",
+    "cpus": "1",
+    "headless": "false",
+    "iso_url": "https://software-download.microsoft.com/download/sg/17763.379.190312-0539.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso",
+    "iso_checksum": "221F9ACBC727297A56674A0F1722B8AC7B6E840B4E1FFBDD538A9ED0DA823562",
+    "iso_checksum_type": "sha256",
+    "winrm_timeout": "6h",
+    "vhv_enable": "false",
+    "computer_name": "TM5",
+    "hyperv_switchname": null,
+    "admin_password": null
+  }
+}

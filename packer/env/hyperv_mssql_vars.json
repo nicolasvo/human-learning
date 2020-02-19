@@ -1,0 +1,12 @@
+{
+    "build_name": "WinSrv2019DCCore-BASE-MSSQL",
+    "base_name": "WinSrv2019DCCore-BASE",
+    "hyperv_switchname": "packer-hyperv-switch",
+    "memory": "2048",
+    "cpus": "1",
+    "headless": "false",
+    "vhv_enable": "false",
+    "mssql_iso_path": ".\\mssql\\iso\\SQLServer2017-x64-ENU-Dev.iso",
+    "sa_password": "R00tR00t",
+    "admin_password": null
+}

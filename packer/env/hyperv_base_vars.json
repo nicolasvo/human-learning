@@ -1,0 +1,14 @@
+{
+    "build_name": "WinSrv2019DCCore-BASE",
+    "autounattend": "./base/answers/2019-DC-CORE/Autounattend.xml",
+    "disk_size": "80000",
+    "disk_type_id": "1",
+    "memory": "2048",
+    "cpus": "1",
+    "iso_url": "https://software-download.microsoft.com/download/sg/17763.379.190312-0539.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso",
+    "iso_checksum": "221F9ACBC727297A56674A0F1722B8AC7B6E840B4E1FFBDD538A9ED0DA823562",
+    "iso_checksum_type": "sha256",
+    "hyperv_switchname": "packer-hyperv-switch",
+    "computer_name": "TM5",
+    "admin_password": "Application1234"
+}

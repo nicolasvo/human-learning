@@ -1,1 +1,0 @@
-Place MSSQL Server ISO to this directory
