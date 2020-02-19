@@ -25,40 +25,6 @@
       "winrm_timeout": "{{user `winrm_timeout`}}",
       "winrm_username": "administrator",
       "winrm_password": "{{user `admin_password`}}"
-    },
-    {
-      "type": "vmware-vmx",
-      "name": "vmware",
-      "display_name": "{{user `build_name`}}",
-      "output_directory": "output-VMWare-{{user `build_name`}}",
-      "source_path": "./output-VMWare-{{user `base_name`}}/{{user `base_name`}}.vmx",
-      "boot_wait": "15s",
-      "communicator": "winrm",
-      "headless": "{{user `headless`}}",
-      "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
-      "shutdown_timeout": "{{user `shutdown_timeout`}}",
-      "vm_name": "{{user `build_name`}}",
-      "vmx_data": {
-        "ide0:0.clientdevice": "FALSE",
-        "ide0:0.present": "TRUE",
-        "ide0:0.devicetype": "cdrom-image",
-        "ide0:0.filename": "{{pwd}}\\{{user `mssql_iso_path`}}",
-        "RemoteDisplay.vnc.enabled": "false",
-        "RemoteDisplay.vnc.port": "5900",
-        "vhv.enable": "{{user `vhv_enable`}}",
-        "ethernet0.connectiontype": "nat",
-        "ethernet0.present": "TRUE",
-        "ethernet0.virtualdev": "vmxnet3"
-      },
-      "vmx_data_post": {
-        "ide0:0.present": "FALSE"
-      },
-      "vmx_remove_ethernet_interfaces": false,
-      "vnc_port_max": 5980,
-      "vnc_port_min": 5900,
-      "winrm_timeout": "{{user `winrm_timeout`}}",
-      "winrm_username": "administrator",
-      "winrm_password": "{{user `admin_password`}}"
     }
   ],
   "provisioners": [
